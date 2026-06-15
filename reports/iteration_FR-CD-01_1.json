@@ -1,0 +1,8 @@
+{
+  "attempt": 1,
+  "requirement_id": "FR-CD-01",
+  "script_file": "generated_tests\\fr_cd_01_the_page_shall_display_a_table_with_headers_lorem_ipsum_dolor_sit_amet.spec.ts",
+  "static_validation": "PASS: Script uses a valid endpoint, stable locators, Playwright assertions, and covers the requirement without obvious hallucinations.",
+  "execution_status": "PASSED",
+  "agent_c_decision": "ACCEPT"
+}

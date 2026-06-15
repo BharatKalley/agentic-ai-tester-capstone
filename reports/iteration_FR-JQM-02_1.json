@@ -1,0 +1,8 @@
+{
+  "attempt": 1,
+  "requirement_id": "FR-JQM-02",
+  "script_file": "generated_tests\\fr_jqm_02_the_descriptive_text_shall_explain_that_visibility_of_elements_is_controlled_by.spec.ts",
+  "static_validation": "PASS: Script uses a valid endpoint, stable locators, Playwright assertions, and covers the requirement without obvious hallucinations.",
+  "execution_status": "PASSED",
+  "agent_c_decision": "ACCEPT"
+}

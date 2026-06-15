@@ -1,0 +1,8 @@
+{
+  "attempt": 2,
+  "requirement_id": "FR-FR-02",
+  "script_file": "generated_tests\\fr_fr_02_selecting_nested_frames_shall_navigate_to_nested_frames_where_multiple_frames.spec.ts",
+  "static_validation": "FAIL: Possible hallucinated endpoint: /nested_frames.",
+  "execution_status": null,
+  "agent_c_decision": "REJECT_AND_FEEDBACK_TO_AGENT_B"
+}

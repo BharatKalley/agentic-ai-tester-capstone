@@ -1,0 +1,407 @@
+{
+  "config": {
+    "configFile": "D:\\agentic-ai-tester-capstone\\playwright.config.ts",
+    "rootDir": "D:/agentic-ai-tester-capstone/generated_tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "D:/agentic-ai-tester-capstone/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/agentic-ai-tester-capstone/generated_tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        {
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/playwright-report.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.60.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "fr_cb_01_rendering_of_checkboxes.spec.ts",
+      "file": "fr_cb_01_rendering_of_checkboxes.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "FR-CB-01 Rendering of Checkboxes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4917,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-06-14T15:51:24.252Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a9929c524eae8ecaa518-c11b7e8a5fd1f3448ef7",
+          "file": "fr_cb_01_rendering_of_checkboxes.spec.ts",
+          "line": 7,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "fr_cb_02_checkbox_state_toggle.spec.ts",
+      "file": "fr_cb_02_checkbox_state_toggle.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "FR-CB-02 Checkbox State Toggle",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5220,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-06-14T15:51:29.613Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "df760411832458d185d8-8995f2cd81668069c6ed",
+          "file": "fr_cb_02_checkbox_state_toggle.spec.ts",
+          "line": 7,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "fr_fa_01_login_form_rendering.spec.ts",
+      "file": "fr_fa_01_login_form_rendering.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "FR-FA-01 Login Form Rendering",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 6594,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-06-14T15:51:34.858Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "3b4b31cc9fa45653b313-57594bc40d989b2c6878",
+          "file": "fr_fa_01_login_form_rendering.spec.ts",
+          "line": 7,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "fr_fa_02_successful_login_with_valid_credentials.spec.ts",
+      "file": "fr_fa_02_successful_login_with_valid_credentials.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "FR-FA-02 Successful Login with Valid Credentials",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 26624,
+                  "error": {
+                    "message": "TimeoutError: page.goto: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://the-internet.herokuapp.com/secure\", waiting until \"domcontentloaded\"\u001b[22m\n",
+                    "stack": "TimeoutError: page.goto: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://the-internet.herokuapp.com/secure\", waiting until \"domcontentloaded\"\u001b[22m\n\n    at D:\\agentic-ai-tester-capstone\\generated_tests\\fr_fa_02_successful_login_with_valid_credentials.spec.ts:8:14",
+                    "location": {
+                      "file": "D:\\agentic-ai-tester-capstone\\generated_tests\\fr_fa_02_successful_login_with_valid_credentials.spec.ts",
+                      "column": 14,
+                      "line": 8
+                    },
+                    "snippet": "\u001b[0m \u001b[90m  6 |\u001b[39m\n \u001b[90m  7 |\u001b[39m test(\u001b[32m'FR-FA-02 Successful Login with Valid Credentials'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page\u001b[33m,\u001b[39m context }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/secure'\u001b[39m\u001b[33m,\u001b[39m { waitUntil\u001b[33m:\u001b[39m \u001b[32m'domcontentloaded'\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'body'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'body'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[35m/Successful\\ Login\\ with\\ Valid\\ Credentials/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "D:\\agentic-ai-tester-capstone\\generated_tests\\fr_fa_02_successful_login_with_valid_credentials.spec.ts",
+                        "column": 14,
+                        "line": 8
+                      },
+                      "message": "TimeoutError: page.goto: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://the-internet.herokuapp.com/secure\", waiting until \"domcontentloaded\"\u001b[22m\n\n\n\u001b[0m \u001b[90m  6 |\u001b[39m\n \u001b[90m  7 |\u001b[39m test(\u001b[32m'FR-FA-02 Successful Login with Valid Credentials'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page\u001b[33m,\u001b[39m context }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/secure'\u001b[39m\u001b[33m,\u001b[39m { waitUntil\u001b[33m:\u001b[39m \u001b[32m'domcontentloaded'\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'body'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'body'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[35m/Successful\\ Login\\ with\\ Valid\\ Credentials/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at D:\\agentic-ai-tester-capstone\\generated_tests\\fr_fa_02_successful_login_with_valid_credentials.spec.ts:8:14\u001b[22m"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-06-14T15:51:41.486Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "D:\\agentic-ai-tester-capstone\\test-results\\fr_fa_02_successful_login_-1923a-ogin-with-Valid-Credentials-chromium\\video.webm"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "D:\\agentic-ai-tester-capstone\\test-results\\fr_fa_02_successful_login_-1923a-ogin-with-Valid-Credentials-chromium\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "D:\\agentic-ai-tester-capstone\\test-results\\fr_fa_02_successful_login_-1923a-ogin-with-Valid-Credentials-chromium\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "D:\\agentic-ai-tester-capstone\\generated_tests\\fr_fa_02_successful_login_with_valid_credentials.spec.ts",
+                    "column": 14,
+                    "line": 8
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "1e0b33efaa8d0b252eb9-cf79a220586eec473718",
+          "file": "fr_fa_02_successful_login_with_valid_credentials.spec.ts",
+          "line": 7,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "fr_fa_03_error_handling_for_invalid_credentials.spec.ts",
+      "file": "fr_fa_03_error_handling_for_invalid_credentials.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "FR-FA-03 Error Handling for Invalid Credentials",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 11904,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-06-14T15:52:08.875Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "55a638b598e6ac05dc63-5a48909b5cd76910e120",
+          "file": "fr_fa_03_error_handling_for_invalid_credentials.spec.ts",
+          "line": 7,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "fr_g_01_home_page_examples_listing.spec.ts",
+      "file": "fr_g_01_home_page_examples_listing.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "FR-G-01 Home Page – Examples Listing",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7876,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-06-14T15:52:21.027Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0f2f4b3621b8ef8696d7-a0e8990a0b14c720db2d",
+          "file": "fr_g_01_home_page_examples_listing.spec.ts",
+          "line": 7,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "fr_g_02_global_footer.spec.ts",
+      "file": "fr_g_02_global_footer.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "FR-G-02 Global Footer",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9610,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-06-14T15:52:28.933Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0b7bfcf7f535d5f1635b-523fc19db5d19d84d065",
+          "file": "fr_g_02_global_footer.spec.ts",
+          "line": 7,
+          "column": 5
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-06-14T15:51:23.841Z",
+    "duration": 75015.30600000001,
+    "expected": 6,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

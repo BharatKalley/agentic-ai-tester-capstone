@@ -1,0 +1,8 @@
+{
+  "attempt": 1,
+  "requirement_id": "FR-SD-01",
+  "script_file": "generated_tests\\fr_sd_01_the_page_shall_demonstrate_shadow_dom_usage_including_the_text_my_default.spec.ts",
+  "static_validation": "PASS: Script uses a valid endpoint, stable locators, Playwright assertions, and covers the requirement without obvious hallucinations.",
+  "execution_status": "PASSED",
+  "agent_c_decision": "ACCEPT"
+}

@@ -1,0 +1,8 @@
+{
+  "attempt": 3,
+  "requirement_id": "FR-G-02",
+  "script_file": "generated_tests\\fr_g_02_global_footer.spec.ts",
+  "static_validation": "PASS: Script uses a valid endpoint, stable locators, Playwright assertions, and covers the requirement without obvious hallucinations.",
+  "execution_status": "PASSED",
+  "agent_c_decision": "ACCEPT"
+}

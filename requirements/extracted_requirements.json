@@ -1,0 +1,872 @@
+[
+  {
+    "id": "FR-G-01",
+    "feature": "Home Page – Examples Listing",
+    "scenario": "Display a list of links to all available example pages ",
+    "actions": "Load the root URL ",
+    "expected": "The page shall display a heading \"Welcome to the-internet\" and a subheading \"Available Examples\" The page shall present a vertical list of example names, each rendered as a hyperlink Each hyperlink text shall match the example name (e.g., \"Checkboxes\", \"File Upload\", \"Typos\") ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-G-02",
+    "feature": "Global Footer",
+    "scenario": "Provide a consistent footer section attributing the site to Elemental Selenium on most example pages ",
+    "actions": "Scroll to the bottom of the example page ",
+    "expected": "The page shall display a footer containing the text \"Powered by Elemental Selenium\" ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/checkboxes",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-CB-01",
+    "feature": "Rendering of Checkboxes",
+    "scenario": "Display two checkboxes with labels ",
+    "actions": "Load /checkboxes ",
+    "expected": "The page shall display at least two checkbox input controls, labeled \"checkbox 1\" and \"checkbox 2\" or equivalent nearby text ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/checkboxes",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-CB-02",
+    "feature": "Checkbox State Toggle",
+    "scenario": "Allow the user to toggle checkbox states ",
+    "actions": "Click a checkbox ",
+    "expected": "On click, the target checkbox shall toggle its checked/unchecked state according t browser default behavior ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/checkboxes",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-FA-01",
+    "feature": "Login Form Rendering",
+    "scenario": "Display username and password fields with a Login button ",
+    "actions": "Load /login ",
+    "expected": "The page shall display a heading indicating it is a \"Login Page\" The page shall display an input field labeled \"Username\" The page shall display an input field labeled \"Password\" The page shall display a \"Login\" button ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/login",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-FA-02",
+    "feature": "Successful Login with Valid Credentials",
+    "scenario": "Grant access to a secure area when valid credentials are provided ",
+    "actions": "Enter \"tomsmith\" in the Username field Enter \"SuperSecretPassword!\" in the Password field Click the \"Login\" button ",
+    "expected": "The system shall authenticate the user as successful when the username is \"tomsmith\" and password is \"SuperSecretPassword!\" Upon success, the system shall navigate to a \"secure area\" page (e.g., via URL change /secure or equivalent) that indicates successful login ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/secure",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-FA-03",
+    "feature": "Error Handling for Invalid Credentials",
+    "scenario": "Display error messages when login information is incorrect ",
+    "actions": "Enter any username and/or password combination other than the known valid tomsmith / SuperSecretPassword! Click the \"Login\" button ",
+    "expected": "The system shall display an error message indicating that the information is wrong The system shall not navigate to the secure area page ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/login",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-DD-01",
+    "feature": "Dropdown Rendering",
+    "scenario": "Display a selectable dropdown list with two options ",
+    "actions": "Load /dropdown ",
+    "expected": "The page shall display a descriptive heading \"Dropdown List\" The page shall present a dropdown (select element) with a default prompt \"Please select an option\" or equivalent text The dropdown shall include at least \"Option 1\" and \"Option 2\" as selectable options ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/dropdown",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-DD-02",
+    "feature": "Option Selection",
+    "scenario": "Allow the user to change the dropdown selection ",
+    "actions": "Click the dropdown and select an option (Option 1 or Option 2) ",
+    "expected": "The dropdown's visible selection shall update to show the chosen option ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/dropdown",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-DC-01",
+    "feature": "Display of Asynchronous Controls",
+    "scenario": "Provide an example page demonstrating asynchronous changes to elements such as checkboxes and input fields ",
+    "actions": "Load /dynamic_controls ",
+    "expected": "The page shall display descriptive text explaining that elements are changed asynchronously The page shall display at least one control (such as a checkbox or input field) that may be dynamically enabled, disabled, added, or removed after user actions ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/dynamic_controls",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-DL-01",
+    "feature": "Dynamic Loading Examples Overview",
+    "scenario": "Present two separate examples of dynamically loaded page elements ",
+    "actions": "Load /dynamic_loading ",
+    "expected": "The page shall display heading \"Dynamically Loaded Page Elements\" The page shall provide two example links or sections  Example 1: Element on page that is hidden  Example 2: Element rendered after the fact ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/dynamic_loading",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-UP-01",
+    "feature": "File Uploader Rendering",
+    "scenario": "Provide a file selection and upload capability ",
+    "actions": "Load /upload ",
+    "expected": "The page shall display heading \"File Uploader\" The page shall display a file input control allowing the user to choose a file from their system The page shall display an \"Upload\" button to initiate upload The page may present a drag-and-drop area for file selection per the descriptive text ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/upload",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-UP-02",
+    "feature": "Upload Action",
+    "scenario": "Allow the user to upload a file and display confirmation ",
+    "actions": "Click the \"Upload\" button ",
+    "expected": "The system shall accept the selected file and navigate to or update the page t reflect that the file has been uploaded ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/upload",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-JA-01",
+    "feature": "Alerts Page Rendering",
+    "scenario": "Present buttons that trigger different types of JavaScript dialogs ",
+    "actions": "Load /javascript_alerts ",
+    "expected": "The page shall display heading \"JavaScript Alerts\" The page shall display three clickable controls, labeled  \"Click for JS Alert\"  \"Click for JS Confirm\"  \"Click for JS Prompt\" The page shall display a \"Result:\" label where outcome text may appear ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/javascript_alerts",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-JA-02",
+    "feature": "Basic Alert Trigger",
+    "scenario": "Trigger a simple JavaScript alert ",
+    "actions": "Click the \"Click for JS Alert\" button ",
+    "expected": "The browser shall display a JavaScript alert dialog ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/javascript_alerts",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-JA-03",
+    "feature": "Confirm and Prompt Triggers",
+    "scenario": "Trigger a confirm and a prompt dialog respectively ",
+    "actions": "Click \"Click for JS Confirm\" Click \"Click for JS Prompt\" ",
+    "expected": "Clicking \"Click for JS Confirm\" shall display a JavaScript confirm dialog Clicking \"Click for JS Prompt\" shall display a JavaScript prompt dialog The \"Result:\" area may update to reflect user actions ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/javascript_alerts",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-DDP-01",
+    "feature": "Drag and Drop Example Rendering",
+    "scenario": "Display a drag-and-drop area with draggable targets ",
+    "actions": "Load /drag_and_drop ",
+    "expected": "The page shall include a region that visually suggests drag-and-drop functionality ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/drag_and_drop",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-TB-01",
+    "feature": "Data Tables Rendering",
+    "scenario": "Display at least two table examples with user data ",
+    "actions": "Load /tables ",
+    "expected": "The page shall display heading \"Data Tables\" The page shall describe \"Example 1\" and \"Example 2\" Each example shall render a table with the following column headers  Last Name  First Name  Due  Web Site  Action Each table shall include at least the rows shown (Smith, Bach, Doe, Conway, etc.) with associated values ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/tables",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-TB-02",
+    "feature": "Row Actions (Edit/Delete) Representation",
+    "scenario": "Provide \"edit\" and \"delete\" action controls in each row ",
+    "actions": "View any table row in Example 1 or Example 2 ",
+    "expected": "Each row shall include an \"edit\" and a \"delete\" action in the Action column ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-NM-01",
+    "feature": "Notification Message Rendering",
+    "scenario": "Display a notification message above the heading ",
+    "actions": "Load /notification_message_rendered ",
+    "expected": "The page shall display heading \"Notification Message\" The page shall display a notification message above the heading, describing an utcome such as \"Action successful\" or \"Action unsuccessful, please try again\" ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/notification_message_rendered",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-NM-02",
+    "feature": "Load New Notification Message",
+    "scenario": "Allow the user to load a new notification message ",
+    "actions": "Click the link labeled \"Click here to load a new message.\" ",
+    "expected": "On each click, the system shall display a new notification message (text potentially different from previous message) ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/notification_message_rendered",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-EA-01",
+    "feature": "Entry Ad Display on First Load",
+    "scenario": "Automatically display an advertisement modal when the page loads ",
+    "actions": "Load /entry_ad ",
+    "expected": "On page load, the system shall display an advertisement (modal or overlay) on the page ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/entry_ad",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-EA-02",
+    "feature": "Close Ad and Prevent Reappearance",
+    "scenario": "Allow the user to close the ad and suppress it on subsequent page loads ",
+    "actions": "Click the \"Close\" control associated with the ad Reload or revisit /entry_ad ",
+    "expected": "The ad shall be dismissed from view once \"Close\" is clicked On subsequent page loads, the ad shall not appear (as long as the setting remains active) ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/entry_ad",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-EA-03",
+    "feature": "Re-enable Ad",
+    "scenario": "Allow the user to re-enable the ad ",
+    "actions": "Click the link or control labeled \"click here\" associated with \"To re-enable it, click here.\" ",
+    "expected": "After re-enabling, subsequent visits to /entry_ad shall again display the ad on page load ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/entry_ad",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-TY-01",
+    "feature": "Random Typo Behavior",
+    "scenario": "Randomly include or exclude a typo in the displayed text on page load ",
+    "actions": "Load /typos Optionally refresh the page multiple times ",
+    "expected": "The page shall display descriptive text explaining that a typo may appear randomly On some page loads, at least one word or punctuation shall be incorrect (e.g., \"won,t\") On other loads, the text may render without such typ ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/typos",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-ARE-01",
+    "feature": "Add Element Button",
+    "scenario": "Render a button for dynamically adding elements ",
+    "actions": "Load /add_remove_elements/ ",
+    "expected": "The page shall display heading \"Add/Remove Elements\" The page shall display a button labeled \"Add Element\" ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/add_remove_elements/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-ARE-02",
+    "feature": "Add Element Action",
+    "scenario": "Add a new element to the page when the \"Add Element\" button is clicked ",
+    "actions": "Click \"Add Element\" ",
+    "expected": "On each click, the system shall add a new button or UI element (commonly \"Delete\") ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-ARE-03",
+    "feature": "Remove Added Elements",
+    "scenario": "Allow removal of dynamically added elements ",
+    "actions": "Click the control associated with each dynamically added element (commonly a Delete button) ",
+    "expected": "The clicked element shall be removed from the DOM and no longer be visible ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-DE-01",
+    "feature": "Element Disappearance/Reappearance Across Loads",
+    "scenario": "On each page load, certain page elements may appear or disappear ",
+    "actions": "Load the page multiple times (including refresh) ",
+    "expected": "The page shall display descriptive text explaining elements may disappear/reappear n each load On some loads, certain menu items or elements shall be visible; on other loads, at least one of them shall not be present ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-HV-01",
+    "feature": "Hover Targets Rendering",
+    "scenario": "Display multiple user images with hidden details revealed on hover ",
+    "actions": "Load /hovers ",
+    "expected": "The page shall display a heading \"Hovers\" The page shall display at least three user images Each user image shall be associated with a set of hidden details  name: user1 (or user2, user3)  A link labeled \"View profile\" ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/hovers",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-HV-02",
+    "feature": "Hover-to-Reveal Behavior",
+    "scenario": "Reveal user details when hovering over each image ",
+    "actions": "Move the mouse pointer over an image ",
+    "expected": "While hovering over an image, the corresponding user's name and \"View profile\" link shall be visible When the mouse leaves the image area, the details may be hidden again ",
+    "source": "SRS PDF formal block",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-AB",
+    "feature": "01: The page shall describe A/B testing or split testing as a way to test different",
+    "scenario": "01: The page shall describe A/B testing or split testing as a way to test different",
+    "actions": "",
+    "expected": "01: The page shall describe A/B testing or split testing as a way to test different",
+    "source": "SRS PDF formal block",
+    "endpoint": "/abtest",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-DCNT",
+    "feature": "01: The page shall load new text and images on each refresh, demonstrating",
+    "scenario": "01: The page shall load new text and images on each refresh, demonstrating",
+    "actions": "",
+    "expected": "01: The page shall load new text and images on each refresh, demonstrating",
+    "source": "SRS PDF formal block",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-SC",
+    "feature": "01: The page shall explain HTTP status codes and list standard codes (Success,",
+    "scenario": "01: The page shall explain HTTP status codes and list standard codes (Success,",
+    "actions": "",
+    "expected": "01: The page shall explain HTTP status codes and list standard codes (Success,",
+    "source": "SRS PDF formal block",
+    "endpoint": "/status_codes",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-IN",
+    "feature": "01: The page shall render a numeric input field labeled \"Number\"",
+    "scenario": "01: The page shall render a numeric input field labeled \"Number\"",
+    "actions": "",
+    "expected": "01: The page shall render a numeric input field labeled \"Number\"",
+    "source": "SRS PDF formal block",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-HS",
+    "feature": "01: The page shall show a horizontal slider control and an associated value indicator t",
+    "scenario": "01: The page shall show a horizontal slider control and an associated value indicator t",
+    "actions": "",
+    "expected": "01: The page shall show a horizontal slider control and an associated value indicator t",
+    "source": "SRS PDF formal block",
+    "endpoint": "/horizontal_slider",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-CM",
+    "feature": "01: The page shall display a box area where right-click triggers a custom context menu",
+    "scenario": "01: The page shall display a box area where right-click triggers a custom context menu",
+    "actions": "",
+    "expected": "01: The page shall display a box area where right-click triggers a custom context menu",
+    "source": "SRS PDF formal block",
+    "endpoint": "/context_menu",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-CD",
+    "feature": "01: The page shall display a table with headers \"Lorem, Ipsum, Dolor, Sit, Amet,",
+    "scenario": "01: The page shall display a table with headers \"Lorem, Ipsum, Dolor, Sit, Amet,",
+    "actions": "",
+    "expected": "01: The page shall display a table with headers \"Lorem, Ipsum, Dolor, Sit, Amet,",
+    "source": "SRS PDF formal block",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-EI",
+    "feature": "01: When the mouse moves out of the viewport pane, the system shall display a modal",
+    "scenario": "01: When the mouse moves out of the viewport pane, the system shall display a modal",
+    "actions": "",
+    "expected": "01: When the mouse moves out of the viewport pane, the system shall display a modal",
+    "source": "SRS PDF formal block",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-JQM",
+    "feature": "01: The page shall display a JQuery UI menu demonstrating nested menu items",
+    "scenario": "01: The page shall display a JQuery UI menu demonstrating nested menu items",
+    "actions": "",
+    "expected": "01: The page shall display a JQuery UI menu demonstrating nested menu items",
+    "source": "SRS PDF formal block",
+    "endpoint": "/jqueryui/menu",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-JE",
+    "feature": "01: The page shall contain a JavaScript error triggered on the onload event",
+    "scenario": "01: The page shall contain a JavaScript error triggered on the onload event",
+    "actions": "",
+    "expected": "01: The page shall contain a JavaScript error triggered on the onload event",
+    "source": "SRS PDF formal block",
+    "endpoint": "/javascript_error",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-LD",
+    "feature": "01: The page shall present a deeply nested DOM structure with headings \"No Siblings\"",
+    "scenario": "01: The page shall present a deeply nested DOM structure with headings \"No Siblings\"",
+    "actions": "",
+    "expected": "01: The page shall present a deeply nested DOM structure with headings \"No Siblings\"",
+    "source": "SRS PDF formal block",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-IS",
+    "feature": "01: The page shall implement infinite scrolling such that scrolling down loads additional",
+    "scenario": "01: The page shall implement infinite scrolling such that scrolling down loads additional",
+    "actions": "",
+    "expected": "01: The page shall implement infinite scrolling such that scrolling down loads additional",
+    "source": "SRS PDF formal block",
+    "endpoint": "/infinite_scroll",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-DL",
+    "feature": "01: The page shall present a list of files as links under the heading \"File Downloader\"",
+    "scenario": "01: The page shall present a list of files as links under the heading \"File Downloader\"",
+    "actions": "",
+    "expected": "01: The page shall present a list of files as links under the heading \"File Downloader\"",
+    "source": "SRS PDF formal block",
+    "endpoint": "/download",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-FP",
+    "feature": "01: The page shall display a form with an \"E-mail\" field and a \"Retrieve password\"",
+    "scenario": "01: The page shall display a form with an \"E-mail\" field and a \"Retrieve password\"",
+    "actions": "",
+    "expected": "01: The page shall display a form with an \"E-mail\" field and a \"Retrieve password\"",
+    "source": "SRS PDF formal block",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-GL",
+    "feature": "01: The page shall display heading \"Geolocation\" and a button labeled \"Where am I?\"",
+    "scenario": "01: The page shall display heading \"Geolocation\" and a button labeled \"Where am I?\"",
+    "actions": "",
+    "expected": "01: The page shall display heading \"Geolocation\" and a button labeled \"Where am I?\"",
+    "source": "SRS PDF formal block",
+    "endpoint": "/geolocation",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-FM",
+    "feature": "01: The page shall show a floating menu that remains visible while the user scrolls",
+    "scenario": "01: The page shall show a floating menu that remains visible while the user scrolls",
+    "actions": "",
+    "expected": "01: The page shall show a floating menu that remains visible while the user scrolls",
+    "source": "SRS PDF formal block",
+    "endpoint": "/floating_menu",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-SD",
+    "feature": "01: The page shall demonstrate shadow DOM usage, including the text \"My default",
+    "scenario": "01: The page shall demonstrate shadow DOM usage, including the text \"My default",
+    "actions": "",
+    "expected": "01: The page shall demonstrate shadow DOM usage, including the text \"My default",
+    "source": "SRS PDF formal block",
+    "endpoint": "/shadowdom",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-FR",
+    "feature": "01: /frames shall display a list of frame-related examples, including \"Nested Frames\"",
+    "scenario": "01: /frames shall display a list of frame-related examples, including \"Nested Frames\"",
+    "actions": "",
+    "expected": "01: /frames shall display a list of frame-related examples, including \"Nested Frames\"",
+    "source": "SRS PDF formal block",
+    "endpoint": "/frames",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-WIN",
+    "feature": "01: /windows shall display text \"Opening a new window\" and a link \"Click Here\".",
+    "scenario": "01: /windows shall display text \"Opening a new window\" and a link \"Click Here\".",
+    "actions": "",
+    "expected": "01: /windows shall display text \"Opening a new window\" and a link \"Click Here\".",
+    "source": "SRS PDF formal block",
+    "endpoint": "/windows",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-SHC",
+    "feature": "01: The page shall list three examples: \"Menu Element\", \"An image\", \"List\",",
+    "scenario": "01: The page shall list three examples: \"Menu Element\", \"An image\", \"List\",",
+    "actions": "",
+    "expected": "01: The page shall list three examples: \"Menu Element\", \"An image\", \"List\",",
+    "source": "SRS PDF formal block",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-AB-01",
+    "feature": "The page shall describe A/B testing or split testing as a way to test different",
+    "scenario": "The page shall describe A/B testing or split testing as a way to test different",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The page shall describe A/B testing or split testing as a way to test different",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/abtest",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-DCNT-01",
+    "feature": "The page shall load new text and images on each refresh, demonstrating",
+    "scenario": "The page shall load new text and images on each refresh, demonstrating",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The page shall load new text and images on each refresh, demonstrating",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-SC-01",
+    "feature": "The page shall explain HTTP status codes and list standard codes (Success,",
+    "scenario": "The page shall explain HTTP status codes and list standard codes (Success,",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The page shall explain HTTP status codes and list standard codes (Success,",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/status_codes",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-IN-01",
+    "feature": "The page shall render a numeric input field labeled \"Number\"",
+    "scenario": "The page shall render a numeric input field labeled \"Number\"",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The page shall render a numeric input field labeled \"Number\"",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-IN-02",
+    "feature": "The field shall accept numeric entry according to browser default behavior (e.g.,",
+    "scenario": "The field shall accept numeric entry according to browser default behavior (e.g.,",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The field shall accept numeric entry according to browser default behavior (e.g.,",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-HS-01",
+    "feature": "The page shall show a horizontal slider control and an associated value indicator t",
+    "scenario": "The page shall show a horizontal slider control and an associated value indicator t",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The page shall show a horizontal slider control and an associated value indicator t",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/horizontal_slider",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-CM-01",
+    "feature": "The page shall display a box area where right-click triggers a custom context menu",
+    "scenario": "The page shall display a box area where right-click triggers a custom context menu",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The page shall display a box area where right-click triggers a custom context menu",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/context_menu",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-CM-02",
+    "feature": "Selecting the custom context menu item shall trigger a JavaScript alert",
+    "scenario": "Selecting the custom context menu item shall trigger a JavaScript alert",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "Selecting the custom context menu item shall trigger a JavaScript alert",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/context_menu",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-CD-01",
+    "feature": "The page shall display a table with headers \"Lorem, Ipsum, Dolor, Sit, Amet,",
+    "scenario": "The page shall display a table with headers \"Lorem, Ipsum, Dolor, Sit, Amet,",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The page shall display a table with headers \"Lorem, Ipsum, Dolor, Sit, Amet,",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-CD-02",
+    "feature": "The page shall describe that locators are intentionally difficult (unique IDs, n",
+    "scenario": "The page shall describe that locators are intentionally difficult (unique IDs, n",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The page shall describe that locators are intentionally difficult (unique IDs, n",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-EI-01",
+    "feature": "When the mouse moves out of the viewport pane, the system shall display a modal",
+    "scenario": "When the mouse moves out of the viewport pane, the system shall display a modal",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "When the mouse moves out of the viewport pane, the system shall display a modal",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-EI-02",
+    "feature": "The modal shall include a \"Close\" control that dismisses it",
+    "scenario": "The modal shall include a \"Close\" control that dismisses it",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The modal shall include a \"Close\" control that dismisses it",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-JQM-01",
+    "feature": "The page shall display a JQuery UI menu demonstrating nested menu items",
+    "scenario": "The page shall display a JQuery UI menu demonstrating nested menu items",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The page shall display a JQuery UI menu demonstrating nested menu items",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/jqueryui/menu",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-JQM-02",
+    "feature": "The descriptive text shall explain that visibility of elements is controlled by",
+    "scenario": "The descriptive text shall explain that visibility of elements is controlled by",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The descriptive text shall explain that visibility of elements is controlled by",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-JE-01",
+    "feature": "The page shall contain a JavaScript error triggered on the onload event",
+    "scenario": "The page shall contain a JavaScript error triggered on the onload event",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The page shall contain a JavaScript error triggered on the onload event",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/javascript_error",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-JE-02",
+    "feature": "The page shall describe that this can be a problem for normal JavaScript injection",
+    "scenario": "The page shall describe that this can be a problem for normal JavaScript injection",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The page shall describe that this can be a problem for normal JavaScript injection",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-LD-01",
+    "feature": "The page shall present a deeply nested DOM structure with headings \"No Siblings\"",
+    "scenario": "The page shall present a deeply nested DOM structure with headings \"No Siblings\"",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The page shall present a deeply nested DOM structure with headings \"No Siblings\"",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-LD-02",
+    "feature": "The page shall describe that this layout is used to demonstrate rendering and test",
+    "scenario": "The page shall describe that this layout is used to demonstrate rendering and test",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The page shall describe that this layout is used to demonstrate rendering and test",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-IS-01",
+    "feature": "The page shall implement infinite scrolling such that scrolling down loads additional",
+    "scenario": "The page shall implement infinite scrolling such that scrolling down loads additional",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The page shall implement infinite scrolling such that scrolling down loads additional",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/infinite_scroll",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-IS-02",
+    "feature": "The page shall contain a link or text \"next page\"",
+    "scenario": "The page shall contain a link or text \"next page\"",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The page shall contain a link or text \"next page\"",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-DL-02",
+    "feature": "Clicking on any file name link shall initiate a download of the corresponding file via",
+    "scenario": "Clicking on any file name link shall initiate a download of the corresponding file via",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "Clicking on any file name link shall initiate a download of the corresponding file via",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-FP-01",
+    "feature": "The page shall display a form with an \"E-mail\" field and a \"Retrieve password\"",
+    "scenario": "The page shall display a form with an \"E-mail\" field and a \"Retrieve password\"",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The page shall display a form with an \"E-mail\" field and a \"Retrieve password\"",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-FP-02",
+    "feature": "Submitting the form shall attempt to retrieve a password for the given email;",
+    "scenario": "Submitting the form shall attempt to retrieve a password for the given email;",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "Submitting the form shall attempt to retrieve a password for the given email;",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-GL-01",
+    "feature": "The page shall display heading \"Geolocation\" and a button labeled \"Where am I?\"",
+    "scenario": "The page shall display heading \"Geolocation\" and a button labeled \"Where am I?\"",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The page shall display heading \"Geolocation\" and a button labeled \"Where am I?\"",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/geolocation",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-GL-02",
+    "feature": "Clicking \"Where am I?\" shall attempt to access the user's current latitude and",
+    "scenario": "Clicking \"Where am I?\" shall attempt to access the user's current latitude and",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "Clicking \"Where am I?\" shall attempt to access the user's current latitude and",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-FM-01",
+    "feature": "The page shall show a floating menu that remains visible while the user scrolls",
+    "scenario": "The page shall show a floating menu that remains visible while the user scrolls",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The page shall show a floating menu that remains visible while the user scrolls",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/floating_menu",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-FM-02",
+    "feature": "The main content shall consist of multiple long paragraphs of placeholder Latin",
+    "scenario": "The main content shall consist of multiple long paragraphs of placeholder Latin",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The main content shall consist of multiple long paragraphs of placeholder Latin",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-SD-01",
+    "feature": "The page shall demonstrate shadow DOM usage, including the text \"My default",
+    "scenario": "The page shall demonstrate shadow DOM usage, including the text \"My default",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The page shall demonstrate shadow DOM usage, including the text \"My default",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/shadowdom",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-SD-02",
+    "feature": "Some content shall be enclosed in shadow DOM such that direct DOM queries",
+    "scenario": "Some content shall be enclosed in shadow DOM such that direct DOM queries",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "Some content shall be enclosed in shadow DOM such that direct DOM queries",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/shadowdom",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-FR-01",
+    "feature": "/frames shall display a list of frame-related examples, including \"Nested Frames\"",
+    "scenario": "/frames shall display a list of frame-related examples, including \"Nested Frames\"",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "/frames shall display a list of frame-related examples, including \"Nested Frames\"",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/frames",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-FR-02",
+    "feature": "Selecting \"Nested Frames\" shall navigate to /nested_frames where multiple frames",
+    "scenario": "Selecting \"Nested Frames\" shall navigate to /nested_frames where multiple frames",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "Selecting \"Nested Frames\" shall navigate to /nested_frames where multiple frames",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/nested_frames",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-FR-03",
+    "feature": "Selecting \"iFrame\" shall navigate to a page with an editable rich text area (per",
+    "scenario": "Selecting \"iFrame\" shall navigate to a page with an editable rich text area (per",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "Selecting \"iFrame\" shall navigate to a page with an editable rich text area (per",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-WIN-01",
+    "feature": "/windows shall display text \"Opening a new window\" and a link \"Click Here\".",
+    "scenario": "/windows shall display text \"Opening a new window\" and a link \"Click Here\".",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "/windows shall display text \"Opening a new window\" and a link \"Click Here\".",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/windows",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-WIN-02",
+    "feature": "multiple_windows (if distinct) shall provide a similar multi-window",
+    "scenario": "multiple_windows (if distinct) shall provide a similar multi-window",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "multiple_windows (if distinct) shall provide a similar multi-window",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/windows",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-SHC-01",
+    "feature": "The page shall list three examples: \"Menu Element\", \"An image\", \"List\",",
+    "scenario": "The page shall list three examples: \"Menu Element\", \"An image\", \"List\",",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "The page shall list three examples: \"Menu Element\", \"An image\", \"List\",",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  },
+  {
+    "id": "FR-SHC-02",
+    "feature": "On reload, elements' positions shall change slightly, reflecting subtle rendering",
+    "scenario": "On reload, elements' positions shall change slightly, reflecting subtle rendering",
+    "actions": "Load page and perform the stated interaction when applicable.",
+    "expected": "On reload, elements' positions shall change slightly, reflecting subtle rendering",
+    "source": "SRS PDF concise requirement",
+    "endpoint": "/",
+    "base_url": "https://the-internet.herokuapp.com"
+  }
+]

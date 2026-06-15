@@ -1,0 +1,8 @@
+{
+  "attempt": 1,
+  "requirement_id": "FR-DDP-01",
+  "script_file": "generated_tests\\fr_ddp_01_drag_and_drop_example_rendering.spec.ts",
+  "static_validation": "PASS: Script uses a valid endpoint, stable locators, Playwright assertions, and covers the requirement without obvious hallucinations.",
+  "execution_status": "PASSED",
+  "agent_c_decision": "ACCEPT"
+}
