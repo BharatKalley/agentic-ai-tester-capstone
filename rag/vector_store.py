@@ -21,7 +21,7 @@ class VectorStore:
     def search(self, query, k=3):
         query_vector = np.array([get_embedding(query)]).astype("float32")
 
-        distances, indices = self.index.search(query_vector, k)
+        _, indices = self.index.search(query_vector, k)
 
         results = []
 

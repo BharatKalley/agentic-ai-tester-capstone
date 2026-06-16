@@ -15,20 +15,36 @@ FIELD_NAMES = (
     rf"{REQ_ID_RE}|\d+\.\d+(?:\.\d+)?"
 )
 
+ADD_REMOVE_PATH = "/add_remove_elements/"
+LOGIN_PATH = "/login"
+DYNAMIC_CONTROLS_PATH = "/dynamic_controls"
+DYNAMIC_LOADING_PATH = "/dynamic_loading"
+DYNAMIC_CONTENT_PATH = "/dynamic_content"
+UPLOAD_PATH = "/upload"
+DOWNLOAD_PATH = "/download"
+JS_ALERTS_PATH = "/javascript_alerts"
+JS_ERROR_PATH = "/javascript_error"
+DRAG_DROP_PATH = "/drag_and_drop"
+TABLES_PATH = "/tables"
+CHECKBOXES_PATH = "/checkboxes"
+ROOT_PATH = "/"
+
 PATH_BY_KEYWORD = [
-    ("add/remove", "/add_remove_elements/"), ("add remove", "/add_remove_elements/"),
-    ("form authentication", "/login"), ("valid credentials", "/login"), ("invalid credentials", "/login"),
-    ("dynamic controls", "/dynamic_controls"), ("dynamic loading", "/dynamic_loading"), ("dynamic content", "/dynamic_content"),
-    ("file uploader", "/upload"), ("file upload", "/upload"), ("file downloader", "/download"), ("file download", "/download"),
-    ("javascript alerts", "/javascript_alerts"), ("js alert", "/javascript_alerts"), ("js confirm", "/javascript_alerts"), ("js prompt", "/javascript_alerts"),
-    ("javascript error", "/javascript_error"), ("drag and drop", "/drag_and_drop"), ("sortable data tables", "/tables"), ("data tables", "/tables"),
+    ("add/remove", ADD_REMOVE_PATH), ("add remove", ADD_REMOVE_PATH),
+    ("form authentication", LOGIN_PATH), ("valid credentials", LOGIN_PATH), ("invalid credentials", LOGIN_PATH),
+    ("dynamic controls", DYNAMIC_CONTROLS_PATH), ("dynamic loading", DYNAMIC_LOADING_PATH), ("dynamic content", DYNAMIC_CONTENT_PATH),
+    ("file uploader", UPLOAD_PATH), ("file upload", UPLOAD_PATH), ("file downloader", DOWNLOAD_PATH), ("file download", DOWNLOAD_PATH),
+    ("javascript alerts", JS_ALERTS_PATH), ("js alert", JS_ALERTS_PATH), ("js confirm", JS_ALERTS_PATH), ("js prompt", JS_ALERTS_PATH),
+    ("javascript error", JS_ERROR_PATH), ("drag and drop", DRAG_DROP_PATH),
+    ("sortable data tables", TABLES_PATH), ("data tables", TABLES_PATH),
     ("notification message", "/notification_message_rendered"), ("entry ad", "/entry_ad"), ("disappearing elements", "/disappearing_elements"),
     ("horizontal slider", "/horizontal_slider"), ("context menu", "/context_menu"), ("challenging dom", "/challenging_dom"), ("exit intent", "/exit_intent"),
     ("jquery ui", "/jqueryui/menu"), ("jquery", "/jqueryui/menu"), ("infinite scroll", "/infinite_scroll"), ("forgot password", "/forgot_password"),
     ("floating menu", "/floating_menu"), ("shadow dom", "/shadowdom"), ("shifting content", "/shifting_content"), ("status codes", "/status_codes"),
-    ("checkbox", "/checkboxes"), ("dropdown", "/dropdown"), ("upload", "/upload"), ("alert", "/javascript_alerts"), ("tables", "/tables"),
+    ("checkbox", CHECKBOXES_PATH), ("dropdown", "/dropdown"), ("upload", UPLOAD_PATH), ("alert", JS_ALERTS_PATH), ("tables", TABLES_PATH),
     ("typos", "/typos"), ("hovers", "/hovers"), ("a/b", "/abtest"), ("inputs", "/inputs"), ("large", "/large"),
-    ("geolocation", "/geolocation"), ("frames", "/frames"), ("windows", "/windows"), ("home page", "/"), ("root url", "/"), ("footer", "/checkboxes"),
+    ("geolocation", "/geolocation"), ("frames", "/frames"), ("windows", "/windows"),
+    ("home page", ROOT_PATH), ("root url", ROOT_PATH), ("footer", CHECKBOXES_PATH),
 ]
 
 
@@ -42,7 +58,7 @@ def _infer_endpoint(text: str) -> str:
     if explicit:
         return explicit[0]
     if "welcome to the-internet" in lower or "root url" in lower:
-        return "/"
+        return ROOT_PATH
     return next((path for key, path in PATH_BY_KEYWORD if key in lower), "/")
 
 
