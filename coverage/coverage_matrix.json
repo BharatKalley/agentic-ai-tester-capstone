@@ -9,8 +9,10 @@
     "failed_requirements": [
       "FR-FA-03"
     ],
+    "hallucinated_scripts": [],
     "coverage_percent": 100.0,
-    "pass_percent": 60.0
+    "pass_percent": 60.0,
+    "approved": false
   },
   "matrix": {
     "FR-G-01": {
@@ -81,7 +83,7 @@
       "executed": true,
       "passed": true,
       "manual_review_required": false,
-      "attempts": 1,
+      "attempts": 4,
       "hallucination_detected": false,
       "edge_case_candidate": false
     },

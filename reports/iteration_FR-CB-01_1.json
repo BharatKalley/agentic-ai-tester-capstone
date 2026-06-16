@@ -1,8 +1,0 @@
-{
-  "attempt": 1,
-  "requirement_id": "FR-CB-01",
-  "script_file": "generated_tests\\fr_cb_01_rendering_of_checkboxes.spec.ts",
-  "static_validation": "PASS: Script uses a valid endpoint, stable locators, Playwright assertions, and covers the requirement.",
-  "execution_status": "PASSED",
-  "agent_c_decision": "ACCEPT"
-}

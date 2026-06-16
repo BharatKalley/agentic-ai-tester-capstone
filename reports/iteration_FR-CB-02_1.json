@@ -1,8 +1,0 @@
-{
-  "attempt": 1,
-  "requirement_id": "FR-CB-02",
-  "script_file": "generated_tests\\fr_cb_02_checkbox_state_toggle.spec.ts",
-  "static_validation": "PASS: Script uses a valid endpoint, stable locators, Playwright assertions, and covers the requirement.",
-  "execution_status": "PASSED",
-  "agent_c_decision": "ACCEPT"
-}
