@@ -1,8 +1,0 @@
-{
-  "attempt": 1,
-  "requirement_id": "FR-WIN",
-  "script_file": "generated_tests\\fr_win_01_windows_shall_display_text_opening_a_new_window_and_a_link_click_here.spec.ts",
-  "static_validation": "PASS: Script uses a valid endpoint, stable locators, Playwright assertions, and covers the requirement without obvious hallucinations.",
-  "execution_status": "PASSED",
-  "agent_c_decision": "ACCEPT"
-}

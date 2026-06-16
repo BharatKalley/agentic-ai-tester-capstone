@@ -1,8 +1,0 @@
-{
-  "attempt": 1,
-  "requirement_id": "FR-FR-01",
-  "script_file": "generated_tests\\fr_fr_01_frames_shall_display_a_list_of_frame_related_examples_including_nested_frames.spec.ts",
-  "static_validation": "PASS: Script uses a valid endpoint, stable locators, Playwright assertions, and covers the requirement without obvious hallucinations.",
-  "execution_status": "PASSED",
-  "agent_c_decision": "ACCEPT"
-}

@@ -1,8 +1,0 @@
-{
-  "attempt": 1,
-  "requirement_id": "FR-WIN-02",
-  "script_file": "generated_tests\\fr_win_02_multiple_windows_if_distinct_shall_provide_a_similar_multi_window.spec.ts",
-  "static_validation": "PASS: Script uses a valid endpoint, stable locators, Playwright assertions, and covers the requirement without obvious hallucinations.",
-  "execution_status": "PASSED",
-  "agent_c_decision": "ACCEPT"
-}

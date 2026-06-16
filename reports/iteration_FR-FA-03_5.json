@@ -1,5 +1,5 @@
 {
-  "attempt": 1,
+  "attempt": 5,
   "requirement_id": "FR-FA-03",
   "script_file": "generated_tests\\fr_fa_03_error_handling_for_invalid_credentials.spec.ts",
   "static_validation": "FAIL: Requirement not covered: invalid login error and secure-area blocking are not asserted.",

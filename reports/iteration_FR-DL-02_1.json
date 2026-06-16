@@ -1,8 +1,0 @@
-{
-  "attempt": 1,
-  "requirement_id": "FR-DL-02",
-  "script_file": "generated_tests\\fr_dl_02_clicking_on_any_file_name_link_shall_initiate_a_download_of_the_corresponding_file_via.spec.ts",
-  "static_validation": "PASS: Script uses a valid endpoint, stable locators, Playwright assertions, and covers the requirement without obvious hallucinations.",
-  "execution_status": "PASSED",
-  "agent_c_decision": "ACCEPT"
-}

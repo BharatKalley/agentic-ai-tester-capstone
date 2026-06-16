@@ -1,8 +1,0 @@
-{
-  "attempt": 1,
-  "requirement_id": "FR-EI",
-  "script_file": "generated_tests\\fr_ei_01_when_the_mouse_moves_out_of_the_viewport_pane_the_system_shall_display_a_modal.spec.ts",
-  "static_validation": "PASS: Script uses a valid endpoint, stable locators, Playwright assertions, and covers the requirement without obvious hallucinations.",
-  "execution_status": "PASSED",
-  "agent_c_decision": "ACCEPT"
-}

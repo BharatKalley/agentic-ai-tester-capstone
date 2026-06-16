@@ -1,8 +1,0 @@
-{
-  "attempt": 4,
-  "requirement_id": "FR-EA-03",
-  "script_file": "generated_tests\\fr_ea_03_re_enable_ad.spec.ts",
-  "static_validation": "PASS: Script uses a valid endpoint, stable locators, Playwright assertions, and covers the requirement without obvious hallucinations.",
-  "execution_status": "FAILED",
-  "agent_c_decision": "REJECT_AND_FEEDBACK_TO_AGENT_B"
-}

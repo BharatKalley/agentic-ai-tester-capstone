@@ -82,12 +82,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 4917,
+                  "duration": 4936,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-06-14T15:51:24.252Z",
+                  "startTime": "2026-06-16T12:10:29.473Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -124,12 +124,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 5220,
+                  "duration": 4381,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-06-14T15:51:29.613Z",
+                  "startTime": "2026-06-16T12:10:34.516Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -166,12 +166,12 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 6594,
+                  "duration": 4253,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-06-14T15:51:34.858Z",
+                  "startTime": "2026-06-16T12:10:38.913Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -208,33 +208,38 @@
                   "workerIndex": 0,
                   "parallelIndex": 0,
                   "status": "failed",
-                  "duration": 26624,
+                  "duration": 9830,
                   "error": {
-                    "message": "TimeoutError: page.goto: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://the-internet.herokuapp.com/secure\", waiting until \"domcontentloaded\"\u001b[22m\n",
-                    "stack": "TimeoutError: page.goto: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://the-internet.herokuapp.com/secure\", waiting until \"domcontentloaded\"\u001b[22m\n\n    at D:\\agentic-ai-tester-capstone\\generated_tests\\fr_fa_02_successful_login_with_valid_credentials.spec.ts:8:14",
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('body')\nTimeout: 5000ms\nExpected pattern: \u001b[32m/Successful\\ Login\\ with\\ Valid\\ Credentials/i\u001b[39m\nReceived string:  \u001b[31m\"·······················································\u001b[39m\n\u001b[31m            You must login to view the secure area!\u001b[39m\n\u001b[31m            ×···················································································\u001b[39m\n\u001b[31m  Login Page\u001b[39m\n\u001b[31m  This is where you can log into the secure area. Enter tomsmith for the username and SuperSecretPassword! for the password. If the information is wrong you should see error messages.················\u001b[39m\n\u001b[31m        Username·································\u001b[39m\n\u001b[31m        Password·····················\u001b[39m\n\u001b[31m       Login······································\u001b[39m\n\u001b[31m        Powered by Elemental Selenium················\u001b[39m\n\u001b[31m\"\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('body')\u001b[22m\n\u001b[2m    14 × locator resolved to <body>…</body>\u001b[22m\n\u001b[2m       - unexpected value \"\u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m          \u001b[22m\n\u001b[2m            You must login to view the secure area!\u001b[22m\n\u001b[2m            ×\u001b[22m\n\u001b[2m          \u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m  Login Page\u001b[22m\n\u001b[2m  This is where you can log into the secure area. Enter tomsmith for the username and SuperSecretPassword! for the password. If the information is wrong you should see error messages.\u001b[22m\n\u001b[2m  \u001b[22m\n\u001b[2m     \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m        Username\u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m        Password\u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m       Login\u001b[22m\n\u001b[2m  \u001b[22m\n\u001b[2m\u001b[22m\n\u001b[2m\u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m        Powered by Elemental Selenium\u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m  \u001b[22m\n\u001b[2m\u001b[22m\n\u001b[2m\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('body')\nTimeout: 5000ms\nExpected pattern: \u001b[32m/Successful\\ Login\\ with\\ Valid\\ Credentials/i\u001b[39m\nReceived string:  \u001b[31m\"·······················································\u001b[39m\n\u001b[31m            You must login to view the secure area!\u001b[39m\n\u001b[31m            ×···················································································\u001b[39m\n\u001b[31m  Login Page\u001b[39m\n\u001b[31m  This is where you can log into the secure area. Enter tomsmith for the username and SuperSecretPassword! for the password. If the information is wrong you should see error messages.················\u001b[39m\n\u001b[31m        Username·································\u001b[39m\n\u001b[31m        Password·····················\u001b[39m\n\u001b[31m       Login······································\u001b[39m\n\u001b[31m        Powered by Elemental Selenium················\u001b[39m\n\u001b[31m\"\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('body')\u001b[22m\n\u001b[2m    14 × locator resolved to <body>…</body>\u001b[22m\n\u001b[2m       - unexpected value \"\u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m          \u001b[22m\n\u001b[2m            You must login to view the secure area!\u001b[22m\n\u001b[2m            ×\u001b[22m\n\u001b[2m          \u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m  Login Page\u001b[22m\n\u001b[2m  This is where you can log into the secure area. Enter tomsmith for the username and SuperSecretPassword! for the password. If the information is wrong you should see error messages.\u001b[22m\n\u001b[2m  \u001b[22m\n\u001b[2m     \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m        Username\u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m        Password\u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m       Login\u001b[22m\n\u001b[2m  \u001b[22m\n\u001b[2m\u001b[22m\n\u001b[2m\u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m        Powered by Elemental Selenium\u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m  \u001b[22m\n\u001b[2m\u001b[22m\n\u001b[2m\"\u001b[22m\n\n    at D:\\agentic-ai-tester-capstone\\generated_tests\\fr_fa_02_successful_login_with_valid_credentials.spec.ts:10:38",
                     "location": {
                       "file": "D:\\agentic-ai-tester-capstone\\generated_tests\\fr_fa_02_successful_login_with_valid_credentials.spec.ts",
-                      "column": 14,
-                      "line": 8
+                      "column": 38,
+                      "line": 10
                     },
-                    "snippet": "\u001b[0m \u001b[90m  6 |\u001b[39m\n \u001b[90m  7 |\u001b[39m test(\u001b[32m'FR-FA-02 Successful Login with Valid Credentials'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page\u001b[33m,\u001b[39m context }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/secure'\u001b[39m\u001b[33m,\u001b[39m { waitUntil\u001b[33m:\u001b[39m \u001b[32m'domcontentloaded'\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'body'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'body'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[35m/Successful\\ Login\\ with\\ Valid\\ Credentials/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
+                    "snippet": "\u001b[0m \u001b[90m  8 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/secure'\u001b[39m\u001b[33m,\u001b[39m { waitUntil\u001b[33m:\u001b[39m \u001b[32m'domcontentloaded'\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m  9 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'body'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'body'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[35m/Successful\\ Login\\ with\\ Valid\\ Credentials/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\u001b[0m"
                   },
                   "errors": [
                     {
                       "location": {
                         "file": "D:\\agentic-ai-tester-capstone\\generated_tests\\fr_fa_02_successful_login_with_valid_credentials.spec.ts",
-                        "column": 14,
-                        "line": 8
+                        "column": 38,
+                        "line": 10
                       },
-                      "message": "TimeoutError: page.goto: Timeout 15000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://the-internet.herokuapp.com/secure\", waiting until \"domcontentloaded\"\u001b[22m\n\n\n\u001b[0m \u001b[90m  6 |\u001b[39m\n \u001b[90m  7 |\u001b[39m test(\u001b[32m'FR-FA-02 Successful Login with Valid Credentials'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page\u001b[33m,\u001b[39m context }) \u001b[33m=>\u001b[39m {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  8 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/secure'\u001b[39m\u001b[33m,\u001b[39m { waitUntil\u001b[33m:\u001b[39m \u001b[32m'domcontentloaded'\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  9 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'body'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m 10 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'body'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[35m/Successful\\ Login\\ with\\ Valid\\ Credentials/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 11 |\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at D:\\agentic-ai-tester-capstone\\generated_tests\\fr_fa_02_successful_login_with_valid_credentials.spec.ts:8:14\u001b[22m"
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('body')\nTimeout: 5000ms\nExpected pattern: \u001b[32m/Successful\\ Login\\ with\\ Valid\\ Credentials/i\u001b[39m\nReceived string:  \u001b[31m\"·······················································\u001b[39m\n\u001b[31m            You must login to view the secure area!\u001b[39m\n\u001b[31m            ×···················································································\u001b[39m\n\u001b[31m  Login Page\u001b[39m\n\u001b[31m  This is where you can log into the secure area. Enter tomsmith for the username and SuperSecretPassword! for the password. If the information is wrong you should see error messages.················\u001b[39m\n\u001b[31m        Username·································\u001b[39m\n\u001b[31m        Password·····················\u001b[39m\n\u001b[31m       Login······································\u001b[39m\n\u001b[31m        Powered by Elemental Selenium················\u001b[39m\n\u001b[31m\"\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('body')\u001b[22m\n\u001b[2m    14 × locator resolved to <body>…</body>\u001b[22m\n\u001b[2m       - unexpected value \"\u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m          \u001b[22m\n\u001b[2m            You must login to view the secure area!\u001b[22m\n\u001b[2m            ×\u001b[22m\n\u001b[2m          \u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m  Login Page\u001b[22m\n\u001b[2m  This is where you can log into the secure area. Enter tomsmith for the username and SuperSecretPassword! for the password. If the information is wrong you should see error messages.\u001b[22m\n\u001b[2m  \u001b[22m\n\u001b[2m     \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m        Username\u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m        Password\u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m       Login\u001b[22m\n\u001b[2m  \u001b[22m\n\u001b[2m\u001b[22m\n\u001b[2m\u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m        \u001b[22m\n\u001b[2m        Powered by Elemental Selenium\u001b[22m\n\u001b[2m      \u001b[22m\n\u001b[2m    \u001b[22m\n\u001b[2m  \u001b[22m\n\u001b[2m\u001b[22m\n\u001b[2m\"\u001b[22m\n\n\n\u001b[0m \u001b[90m  8 |\u001b[39m   \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'/secure'\u001b[39m\u001b[33m,\u001b[39m { waitUntil\u001b[33m:\u001b[39m \u001b[32m'domcontentloaded'\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m  9 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'body'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m   \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'body'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[35m/Successful\\ Login\\ with\\ Valid\\ Credentials/i\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\u001b[0m\n\u001b[2m    at D:\\agentic-ai-tester-capstone\\generated_tests\\fr_fa_02_successful_login_with_valid_credentials.spec.ts:10:38\u001b[22m"
                     }
                   ],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-06-14T15:51:41.486Z",
+                  "startTime": "2026-06-16T12:10:43.179Z",
                   "annotations": [],
                   "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "D:\\agentic-ai-tester-capstone\\test-results\\fr_fa_02_successful_login_-1923a-ogin-with-Valid-Credentials-chromium\\test-failed-1.png"
+                    },
                     {
                       "name": "video",
                       "contentType": "video/webm",
@@ -253,8 +258,8 @@
                   ],
                   "errorLocation": {
                     "file": "D:\\agentic-ai-tester-capstone\\generated_tests\\fr_fa_02_successful_login_with_valid_credentials.spec.ts",
-                    "column": 14,
-                    "line": 8
+                    "column": 38,
+                    "line": 10
                   }
                 }
               ],
@@ -290,12 +295,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 11904,
+                  "duration": 9013,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-06-14T15:52:08.875Z",
+                  "startTime": "2026-06-16T12:10:53.510Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -332,12 +337,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 7876,
+                  "duration": 6020,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-06-14T15:52:21.027Z",
+                  "startTime": "2026-06-16T12:11:02.672Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -374,12 +379,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 9610,
+                  "duration": 6205,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-06-14T15:52:28.933Z",
+                  "startTime": "2026-06-16T12:11:08.702Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -393,13 +398,97 @@
           "column": 5
         }
       ]
+    },
+    {
+      "title": "nfr_u_01_page_structures_shall_be_simple_and_minimalistic_so_that_intended_test_interactions.spec.ts",
+      "file": "nfr_u_01_page_structures_shall_be_simple_and_minimalistic_so_that_intended_test_interactions.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "NFR-U-01 Page structures shall be simple and minimalistic so that intended test interactions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4860,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-06-16T12:11:14.917Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5cc862649d6c86460afe-b41ca0d68723b956f538",
+          "file": "nfr_u_01_page_structures_shall_be_simple_and_minimalistic_so_that_intended_test_interactions.spec.ts",
+          "line": 7,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "nfr_u_02_each_example_page_shall_include_explanatory_text_at_or_near_the_top_that_clearly.spec.ts",
+      "file": "nfr_u_02_each_example_page_shall_include_explanatory_text_at_or_near_the_top_that_clearly.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "NFR-U-02 Each example page shall include explanatory text at or near the top that clearly",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3760,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-06-16T12:11:19.788Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "a2f8c74f1bbb114afde4-f326708a3630e6e8870d",
+          "file": "nfr_u_02_each_example_page_shall_include_explanatory_text_at_or_near_the_top_that_clearly.spec.ts",
+          "line": 7,
+          "column": 5
+        }
+      ]
     }
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-06-14T15:51:23.841Z",
-    "duration": 75015.30600000001,
-    "expected": 6,
+    "startTime": "2026-06-16T12:10:29.053Z",
+    "duration": 54598.844,
+    "expected": 8,
     "skipped": 0,
     "unexpected": 1,
     "flaky": 0

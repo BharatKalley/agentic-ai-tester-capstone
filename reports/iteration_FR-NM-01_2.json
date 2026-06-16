@@ -1,8 +1,0 @@
-{
-  "attempt": 2,
-  "requirement_id": "FR-NM-01",
-  "script_file": "generated_tests\\fr_nm_01_notification_message_rendering.spec.ts",
-  "static_validation": "PASS: Script uses a valid endpoint, stable locators, Playwright assertions, and covers the requirement without obvious hallucinations.",
-  "execution_status": "FAILED",
-  "agent_c_decision": "REJECT_AND_FEEDBACK_TO_AGENT_B"
-}

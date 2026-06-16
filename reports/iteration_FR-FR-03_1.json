@@ -1,8 +1,0 @@
-{
-  "attempt": 1,
-  "requirement_id": "FR-FR-03",
-  "script_file": "generated_tests\\fr_fr_03_selecting_iframe_shall_navigate_to_a_page_with_an_editable_rich_text_area_per.spec.ts",
-  "static_validation": "PASS: Script uses a valid endpoint, stable locators, Playwright assertions, and covers the requirement without obvious hallucinations.",
-  "execution_status": "PASSED",
-  "agent_c_decision": "ACCEPT"
-}

@@ -1,8 +1,0 @@
-{
-  "attempt": 1,
-  "requirement_id": "FR-CD-02",
-  "script_file": "generated_tests\\fr_cd_02_the_page_shall_describe_that_locators_are_intentionally_difficult_unique_ids_n.spec.ts",
-  "static_validation": "PASS: Script uses a valid endpoint, stable locators, Playwright assertions, and covers the requirement without obvious hallucinations.",
-  "execution_status": "PASSED",
-  "agent_c_decision": "ACCEPT"
-}

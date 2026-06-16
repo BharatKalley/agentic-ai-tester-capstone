@@ -1,8 +1,0 @@
-{
-  "attempt": 1,
-  "requirement_id": "FR-DE-01",
-  "script_file": "generated_tests\\fr_de_01_element_disappearance_reappearance_across_loads.spec.ts",
-  "static_validation": "PASS: Script uses a valid endpoint, stable locators, Playwright assertions, and covers the requirement without obvious hallucinations.",
-  "execution_status": "PASSED",
-  "agent_c_decision": "ACCEPT"
-}

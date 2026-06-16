@@ -8,4 +8,5 @@ test('FR-G-02 Global Footer', async ({ page, context }) => {
   await page.goto('/checkboxes', { waitUntil: 'domcontentloaded' });
   const boxes = page.locator('input[type=checkbox]');
   await expect(boxes).toHaveCount(2);
+  await expect(page.locator('body')).toContainText('Powered by Elemental Selenium');
 });
