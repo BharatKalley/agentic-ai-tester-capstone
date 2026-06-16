@@ -1,7 +1,11 @@
 """Agent C execution helper: run generated Playwright tests via real Playwright CLI."""
 from __future__ import annotations
 
-import json, os, shutil, subprocess, time
+import json
+import os
+import shutil
+import subprocess
+import time
 from pathlib import Path
 from typing import Any, Dict
 
@@ -14,22 +18,41 @@ def _npx_command() -> str:
     return "npx.cmd" if os.name == "nt" and shutil.which("npx.cmd") else "npx"
 
 
+def _walk_suites(suites: list, results: Dict[str, Dict[str, Any]]) -> None:
+    for suite in suites or []:
+        file_name = suite.get("file")
+        if file_name:
+            statuses = [
+                r.get("status")
+                for spec in suite.get("specs", [])
+                for test in spec.get("tests", [])
+                for r in test.get("results", [])
+            ]
+            failed = any(s not in {"passed"} for s in statuses) or any(not s.get("ok", True) for s in suite.get("specs", []))
+            results[Path(file_name).name] = {"status": "FAILED" if failed else "PASSED", "raw_statuses": statuses}
+        _walk_suites(suite.get("suites", []), results)
+
+
 def _parse_json_report(output: str, return_code: int) -> Dict[str, Any]:
     try:
-        stats = json.loads(output).get("stats", {})
+        report = json.loads(output)
+        stats = report.get("stats", {})
         passed = int(stats.get("expected", stats.get("passed", 0)) or 0)
         failed = int(stats.get("unexpected", stats.get("failed", 0)) or 0)
         flaky = int(stats.get("flaky", 0) or 0)
         skipped = int(stats.get("skipped", 0) or 0)
         total = int(stats.get("total", passed + failed + flaky + skipped) or 0)
+        file_results: Dict[str, Dict[str, Any]] = {}
+        _walk_suites(report.get("suites", []), file_results)
     except Exception:
-        passed, failed, flaky, skipped, total = (0, 0 if return_code == 0 else 1, 0, 0, 0)
+        passed, failed, flaky, skipped, total, file_results = (0, 0 if return_code == 0 else 1, 0, 0, 0, {})
     return {
         "test_count": total,
         "passed_count": passed,
         "failed_count": failed,
         "flaky_count": flaky,
         "skipped_count": skipped,
+        "file_results": file_results,
         "status": "PASSED" if return_code == 0 and failed == 0 else "FAILED",
     }
 

@@ -2,60 +2,61 @@
 
 from __future__ import annotations
 
-import json
+import json, os
 
 from pathlib import Path
 from typing import Dict, List, Optional
+from agents.executor_agent import run_all_tests, run_single_test
 from agents.extractor_agent import extract_requirements
 from agents.playwright_agent import generate_playwright_script
 from agents.validator_agent import validate_script
-from agents.executor_agent import run_single_test, run_all_tests
-from utils.file_utils import save_script, clean_generated_outputs
-from utils.test_report_utils import ReportManager
+from utils.file_utils import save_script
+from utils.output_cleanup import clean_workflow_outputs, ensure_project_dirs
 from utils.summary_report_utils import write_summary_reports
+from utils.test_report_utils import ReportManager
 
 MAX_RETRIES = 5
-ROOT_DIRS = ["generated_tests", "reports", "requirements", "feedback", "coverage", "execution"]
+
 PASSED, FAILED, MANUAL, PASS_NFR = "PASSED", "FAILED_AFTER_MAX_ATTEMPTS", "MANUAL_REVIEW_REQUIRED", "PASS_NFR_REVIEW"
+
 EDGE_KEYS = ["invalid", "error", "empty", "denies", "random", "edge", "negative"]
 
-def ensure_project_dirs() -> None:
-    for folder in ROOT_DIRS:
-        path = Path(folder)
-        path.mkdir(exist_ok=True)
-        (path / ".gitkeep").touch(exist_ok=True)
-        
 def _write_json(path: str | Path, data) -> None:
     Path(path).parent.mkdir(parents=True, exist_ok=True)
     Path(path).write_text(json.dumps(data, indent=2, ensure_ascii=False), encoding="utf-8")
     
+
 def _same_requirement(a: Dict, b: Dict) -> bool:
     return a.get("id") == b.get("id") or (a.get("feature"), a.get("endpoint")) == (b.get("feature"), b.get("endpoint"))
+
 
 def _is_nfr(req: Dict) -> bool:
     return str(req.get("id", "")).upper().startswith("NFR") or str(req.get("type", "")).lower().startswith("non")
 
+
 def _is_pass(validation: str) -> bool:
     return validation.upper().startswith("PASS")
+
 
 def _accepted(req: Dict, validation: str, execution: Optional[Dict], execute_tests: bool) -> bool:
     if _is_nfr(req):
         return validation.upper().startswith(PASS_NFR)
     return _is_pass(validation) and (not execute_tests or bool(execution and execution.get("status") == PASSED))
 
-def _final_outcome(req: Dict, validation: str, execution: Optional[Dict], execute_tests: bool) -> str:
-    if _is_nfr(req) and validation.upper().startswith(PASS_NFR):
-        return MANUAL
-    return PASSED if _accepted(req, validation, execution, execute_tests) else FAILED
 
-def _failure_feedback(validation: str, execution: Optional[Dict]) -> Dict:
+def _final_outcome(req: Dict, validation: str, execution: Optional[Dict], execute_tests: bool) -> str:
+    return MANUAL if _is_nfr(req) and validation.upper().startswith(PASS_NFR) else PASSED if _accepted(req, validation, execution, execute_tests) else FAILED
+
+
+def _feedback(validation: str, execution: Optional[Dict]) -> Dict:
     issues = []
     if validation and not _is_pass(validation):
         issues.append("Static validation failed: " + validation)
     if execution and execution.get("status") != PASSED:
         err = execution.get("error") or execution.get("output") or "Playwright execution failed"
         issues.append("Playwright execution failed. Fix only this requirement. Error/output: " + str(err)[-2500:])
-    return {"issues": issues, "instruction_to_agent_b": "Regenerate only this failed requirement. Do not regenerate already passed scripts. Use actual visible UI text and stable Playwright locators. Never assert SRS prose. Avoid fixed sleeps; use role, text, id, and CSS locators that exist on the page."}
+    return {"issues": issues, "instruction_to_agent_b": "Regenerate only this failed requirement. Use actual UI text and stable Playwright locators. Never assert SRS prose."}
+
 
 def _run_if_needed(req: Dict, file_path: str, validation: str, execute_tests: bool, attempt: int) -> Optional[Dict]:
     if not (execute_tests and _is_pass(validation) and not _is_nfr(req)):
@@ -64,10 +65,9 @@ def _run_if_needed(req: Dict, file_path: str, validation: str, execute_tests: bo
     _write_json(Path("execution") / f"{Path(file_path).stem}_attempt_{attempt}.json", execution)
     return execution
 
-def _run_attempt(req: Dict, feedback: str, attempt: int, execute_tests: bool) -> Dict:
-    script = generate_playwright_script(req, feedback=feedback)
-    validation = validate_script(req, script)
-    file_path = save_script(req, script)
+def _run_attempt(req: Dict, feedback_text: str, attempt: int, execute_tests: bool) -> Dict:
+    script = generate_playwright_script(req, _feedback=feedback_text)
+    validation, file_path = validate_script(req, script), save_script(req, script)
     execution = _run_if_needed(req, file_path, validation, execute_tests, attempt)
     accepted = _accepted(req, validation, execution, execute_tests)
     record = {"attempt": attempt, "requirement_id": req.get("id"), "script_file": file_path, "static_validation": validation, "execution_status": None if execution is None else execution.get("status"), "agent_c_decision": "ACCEPT" if accepted else "REJECT_AND_FEEDBACK_TO_AGENT_B"}
@@ -75,19 +75,28 @@ def _run_attempt(req: Dict, feedback: str, attempt: int, execute_tests: bool) ->
 
 def run_workflow_for_requirement(req: Dict, execute_tests: bool = True) -> Dict:
     ensure_project_dirs()
-    feedback_text, feedback, attempts = "", {}, []
+    feedback_text, final_feedback, attempts = "", {}, []
     result = {"file_path": "", "validation": "FAIL: Not generated yet.", "execution": None}
     for attempt in range(1, MAX_RETRIES + 1):
         result = _run_attempt(req, feedback_text, attempt, execute_tests)
         attempts.append(result["record"])
         _write_json(Path("reports") / f"iteration_{req.get('id', 'REQ')}_{attempt}.json", result["record"])
         if result["accepted"]:
-            feedback = {"issues": [], "instruction_to_agent_b": "No regeneration needed. Script accepted by Agent C."}
+            final_feedback = {"issues": [], "instruction_to_agent_b": "No regeneration needed. Script accepted by Agent C."}
             break
-        feedback = _failure_feedback(result["validation"], result["execution"])
-        feedback_text = json.dumps(feedback)
-        _write_json(Path("feedback") / f"{req.get('id', 'REQ')}_attempt_{attempt}.json", feedback)
-    return {"requirement": req, "script_file": result["file_path"], "validation": result["validation"], "execution": result["execution"], "attempts": len(attempts), "retries": max(0, len(attempts) - 1), "attempt_history": attempts, "agent_c_feedback": feedback, "final_outcome": _final_outcome(req, result["validation"], result["execution"], execute_tests)}
+        final_feedback, feedback_text = _feedback(result["validation"], result["execution"]), ""
+        feedback_text = json.dumps(final_feedback)
+        _write_json(Path("feedback") / f"{req.get('id', 'REQ')}_attempt_{attempt}.json", final_feedback)
+    return {"requirement": req, "script_file": result["file_path"], "validation": result["validation"], "execution": result["execution"], "attempts": len(attempts), "retries": max(0, len(attempts) - 1), "attempt_history": attempts, "agent_c_feedback": final_feedback, "final_outcome": _final_outcome(req, result["validation"], result["execution"], execute_tests)}
+
+def _apply_batch_execution(results: List[Dict], batch: Dict) -> List[Dict]:
+    for result in results:
+        file_status = batch.get("file_results", {}).get(Path(result.get("script_file", "")).name)
+        if result.get("final_outcome") == FAILED and not result.get("execution") and file_status:
+            status = file_status.get("status", FAILED)
+            result["execution"] = {"status": status, "batch_execution": True}
+            result["final_outcome"] = PASSED if status == PASSED else FAILED
+    return results
 
 def _matrix_row(req: Dict, latest: Dict) -> Dict:
     validation = str(latest.get("validation", ""))
@@ -96,11 +105,11 @@ def _matrix_row(req: Dict, latest: Dict) -> Dict:
 
 def _summary(matrix: Dict) -> Dict:
     total = len(matrix)
-    summary = {"total_requirements": total, "tests_generated": sum(v["test_exists"] for v in matrix.values()), "tests_executed": sum(v["executed"] for v in matrix.values()), "tests_passed": sum(v["passed"] for v in matrix.values()), "manual_review_required": sum(v["manual_review_required"] for v in matrix.values()), "missing_requirements": [rid for rid, v in matrix.items() if not v["test_exists"]], "failed_requirements": [rid for rid, v in matrix.items() if v["test_exists"] and not v["passed"] and not v["manual_review_required"]], "hallucinated_scripts": [rid for rid, v in matrix.items() if v["hallucination_detected"]]}
-    summary["coverage_percent"] = round(summary["tests_generated"] / total * 100, 2) if total else 0
-    summary["pass_percent"] = round(summary["tests_passed"] / total * 100, 2) if total else 0
-    summary["approved"] = not summary["missing_requirements"] and not summary["failed_requirements"] and not summary["hallucinated_scripts"]
-    return summary
+    failed = [rid for rid, v in matrix.items() if v["test_exists"] and not v["passed"] and not v["manual_review_required"]]
+    missing = [rid for rid, v in matrix.items() if not v["test_exists"]]
+    hallucinated = [rid for rid, v in matrix.items() if v["hallucination_detected"]]
+    generated, passed = sum(v["test_exists"] for v in matrix.values()), sum(v["passed"] for v in matrix.values())
+    return {"total_requirements": total, "tests_generated": generated, "tests_executed": sum(v["executed"] for v in matrix.values()), "tests_passed": passed, "manual_review_required": sum(v["manual_review_required"] for v in matrix.values()), "missing_requirements": missing, "failed_requirements": failed, "hallucinated_scripts": hallucinated, "coverage_percent": round(generated / total * 100, 2) if total else 0, "pass_percent": round(passed / total * 100, 2) if total else 0, "approved": not missing and not failed and not hallucinated}
 
 def build_coverage_matrix(requirements: List[Dict], results: List[Dict]) -> Dict:
     matrix = {}
@@ -122,11 +131,13 @@ def _finalize(requirements: List[Dict], results: List[Dict], report_name: str) -
 def run_workflow(pdf_path: str, execute_tests: bool = True, max_requirements: Optional[int] = None, clean: bool = True) -> List[Dict]:
     ensure_project_dirs()
     if clean:
-        clean_generated_outputs(); ensure_project_dirs()
+        clean_workflow_outputs()
     requirements = extract_requirements(pdf_path)
     requirements = requirements[:max_requirements] if max_requirements else requirements
     _write_json("requirements/extracted_requirements.json", requirements)
-    return _finalize(requirements, [run_workflow_for_requirement(req, execute_tests) for req in requirements], "latest_validation_report")
+    batch_mode = execute_tests and os.getenv("AGENT_EXECUTION_MODE", "batch").lower() == "batch"
+    results = [run_workflow_for_requirement(req, execute_tests and not batch_mode) for req in requirements]
+    return _finalize(requirements, _apply_batch_execution(results, run_execution_only()) if batch_mode else results, "latest_validation_report")
 
 def run_execution_only(test_dir: str = "generated_tests"):
     ensure_project_dirs()
@@ -136,7 +147,8 @@ def run_execution_only(test_dir: str = "generated_tests"):
 
 def run_workflow_with_selective_regeneration(pdf_path: str, previous_results: Optional[list] = None, execute_tests: bool = True):
     ensure_project_dirs()
-    requirements, old, results = extract_requirements(pdf_path), previous_results or [], []
+    old, results = previous_results or [], []
+    requirements = extract_requirements(pdf_path)
     for req in requirements:
         previous = next((r for r in old if _same_requirement(r.get("requirement", {}), req)), None)
         results.append(previous if previous and previous.get("final_outcome") == PASSED else run_workflow_for_requirement(req, execute_tests))
